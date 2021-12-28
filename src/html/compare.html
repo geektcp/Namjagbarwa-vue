@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue文本渲染三种方法</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    <!--   {}}/v-text不能解析html元素，只会照样输出 -->
+    <p>1{{hello}}</p>
+    <p v-text = 'hello'>2{{hello}}</p>
+    <p v-html = 'hello'>3{{hello}}</p>
+    <p v-bind = 'hello'>4{{hello}}</p>
+    <p v-model = 'hello'>5{{hello}}</p>
+</div>
+</body>
+<script>
+    let app = new Vue({
+        el:'#app',
+        data:{
+            hello:'<span>hello world</span>'
+        }
+    })
+</script>
+</html>
