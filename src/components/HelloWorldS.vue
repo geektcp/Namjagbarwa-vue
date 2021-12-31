@@ -60,8 +60,6 @@
                 // this.scene.add(this.cube)
 
                 this.camera.position.z = 5
-
-                const animate = function() {}
             },
             animate: function() {
                 requestAnimationFrame(this.animate)
