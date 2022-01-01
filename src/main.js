@@ -8,8 +8,8 @@ Vue.config.productionTip = false
 // import router from './router'
 
 const routes = [
-  { path: '/a', component: () => import('@/components/HelloWorld'), },
-  { path: '/a', component: () => import('@/components/HelloWorldS'), },
+  { path: '/a', component: () => import('@/components/HelloWorldA'), },
+  { path: '/b', component: () => import('@/components/HelloWorldB'), },
 ]
 
 const router = new VueRouter({

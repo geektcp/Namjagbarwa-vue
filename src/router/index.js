@@ -2,12 +2,21 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-import HelloWorldS from '../components/HelloWorldS'
-import HelloWorld from "../components/HelloWorld";
+import HelloWorldA from '../components/HelloWorldA'
+import HelloWorldB from "../components/HelloWorldB";
+// const routes = [
+//     { path: '/a',  component: HelloWorldA  },
+//     { path: '/b',  component: HelloWorldB }
+//
+// ]
+
 const routes = [
-    { path: '/foo', component: HelloWorld },
-    { path: '/bar', component: HelloWorldS }
+    { path: '/a',  component: () => import('@/components/HelloWorldA')  },
+    { path: '/b',  component: () => import('@/components/HelloWorldB')  }
+
 ]
+
+
 
 const router = new VueRouter({
     routes // (缩写) 相当于 routes: routes
