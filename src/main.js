@@ -7,9 +7,17 @@ Vue.config.productionTip = false
 
 // import router from './router'
 
+// const routes = [
+//   { path: '/a', component: () => import('@/components/HelloWorldA'), },
+//   { path: '/b', component: () => import('@/components/HelloWorldB'), },
+// ]
+
+import HelloWorldA from '@/components/HelloWorldA'
+import HelloWorldB from "@/components/HelloWorldB";
 const routes = [
-  { path: '/a', component: () => import('@/components/HelloWorldA'), },
-  { path: '/b', component: () => import('@/components/HelloWorldB'), },
+    { path: '/a',  component: HelloWorldA  },
+    { path: '/b',  component: HelloWorldB }
+
 ]
 
 const router = new VueRouter({
