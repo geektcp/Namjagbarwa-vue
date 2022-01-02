@@ -4,6 +4,8 @@ import router from './router'
 
 Vue.config.productionTip = false
 import store from './store'
+
+import './icons' // icon
 import './permission'
 import Element from 'element-ui'
 
