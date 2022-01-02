@@ -1,10 +1,7 @@
 <template>
     <div>
-        <p>
-            111111111111111
-        </P>
-        <li>{{ todo.text }}</li>
-        <li>{{ todo.id }}</li>
+        <p>{{ todo.text }}  | {{ todo.id }}</p>
+
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ol>
+        <div>
             <!--
               现在我们为每个 todo-item 提供 todo 对象
               todo 对象是变量，即其内容可以是动态的。
@@ -12,19 +12,23 @@
                     v-bind:todo="item"
                     :key="item.id"
             ></todo-item>
-        </ol>
+        </div>
 
-        <ul>
-            <li v-for="user in userList" :key=user.id>
-                {{ user}}
-            </li>
-        </ul>
-
+        <div>
+            <!--     (ele, key, aaa) 括号内的参数可以随便填，必须和:key对其即可       -->
+            <div v-for="(ele, key, aaa) in userList" :key=aaa>
+                {{key}} | {{ ele}}
+            </div>
+        </div>
+        <p/>
+        <div>
+            <div v-for="(ele, key, index) in arrList" :key="key">
+              {{key}} | {{ ele}} | {{index}}
+            </div>
+        </div>
     </div>
 
-
 </template>
-
 
 <script>
     // vue import语句后面的组件不支持使用横杠
@@ -47,9 +51,10 @@
                     "userC",
                 ],
                 arrList: [
-                    1,
-                    2,
-                    3
+                    11,
+                    12,
+                    13,
+                    1114
                 ]
             }
         }
