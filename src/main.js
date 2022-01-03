@@ -13,10 +13,15 @@ import '@/styles/index.scss' // global css
 import App from './App'
 import store from './store'
 import router from './router'
-
+import './icons' // icon
 import './permission' // permission control
 import './utils/error-log' // error log
+import * as filters from './filters' // global filters ,如果去掉，登录时会报错，但不会阻碍系统运行
 
+// register global utility filters
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
