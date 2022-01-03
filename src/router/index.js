@@ -45,10 +45,98 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: {title: 'Dashboard', icon: 'dashboard', affix: true}
       }
     ]
   },
+  {
+    path: '/hello',
+    component: Layout,
+    redirect: '/hello',
+    meta: {
+      title: 'hello',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: '/a',
+        component: HelloWorldA,
+        meta: {
+          title: 'HelloWorldA',
+        }
+      },
+      {
+        path: '/b',
+        component: HelloWorldB,
+        meta: {
+          title: 'HelloWorldB',
+        }
+      },
+    ]
+  },
+  {
+    path: '/app',
+    component: Layout,
+    redirect: '/app',
+    meta: {
+      title: 'app',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'app1',
+        component: app1,
+        meta: {
+          title: 'app1',
+        }
+      },
+      {
+        path: '/app2',
+        component: app2,
+        meta: {
+          title: 'app2',
+        }
+      },
+      {
+        path: '/app3',
+        component: app3,
+        meta: {
+          title: 'app3',
+        }
+      },
+      {
+        path: '/app4',
+        component: app4,
+        meta: {
+          title: 'app4',
+        }
+      },
+      {
+        path: '/app5',
+        component: app5,
+        meta: {
+          title: 'app5',
+        }
+      },
+      {
+        path: '/app6',
+        component: app6,
+        meta: {
+          title: 'app6',
+        }
+      },
+      {
+        path: '/app7',
+        component: app7,
+        meta: {
+          title: 'app7',
+        }
+      },
+    ]
+  },
+
 
 ]
 
@@ -114,13 +202,13 @@ export const asyncRoutes = [
         path: '401',
         component: () => import('@/views/error-page/401'),
         name: 'Page401',
-        meta: { title: '401', noCache: true }
+        meta: {title: '401', noCache: true}
       },
       {
         path: '404',
         component: () => import('@/views/error-page/404'),
         name: 'Page404',
-        meta: { title: '404', noCache: true }
+        meta: {title: '404', noCache: true}
       }
     ]
   },
@@ -133,28 +221,27 @@ export const asyncRoutes = [
         path: 'log',
         component: () => import('@/views/error-log/index'),
         name: 'ErrorLog',
-        meta: { title: 'Error Log', icon: 'bug' }
+        meta: {title: 'Error Log', icon: 'bug'}
       }
     ]
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  {path: '*', redirect: '/404', hidden: true}
 ]
 
 const createRouter = () => new Router({
-    // mode: 'history', // require service support
-    scrollBehavior: () => ({ y: 0 }),
-    routes: constantRoutes
+  // mode: 'history', // require service support
+  scrollBehavior: () => ({y: 0}),
+  routes: constantRoutes
 })
 
 const router = createRouter()
 
 
-
 export function resetRouter() {
-    const newRouter = createRouter()
-    router.matcher = newRouter.matcher // reset router
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
 }
 
 export default router
