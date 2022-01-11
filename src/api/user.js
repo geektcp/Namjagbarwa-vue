@@ -1,39 +1,57 @@
-import request from '@/utils/request'
-
-export function login(data) {
-  return request({
-    url: '/vue-element-admin/user/login',
-    method: 'post',
-    data
-  })
-}
-
-export function getInfo(token) {
-  return request({
-    url: '/vue-element-admin/user/info',
-    method: 'get',
-    params: { token }
-  })
-}
-
-export function logout() {
-  return request({
-    url: '/vue-element-admin/user/logout',
-    method: 'post'
-  })
-}
+// import request from '@/utils/request'
 
 // export function login(data) {
-//     let ret =  {code: 20000, data: {token: 'admin-token'}}
-//     ret
+//   return request({
+//     url: '/vue-element-admin/user/login',
+//     method: 'post',
+//     data
+//   })
 // }
-//
+
 // export function getInfo(token) {
-//     let ret =   {code:20000,data:{roles:["admin"],introduction:"I am a super administrator",avatar:"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif", name:"Super Admin"}}
-//     ret
+//   return request({
+//     url: '/vue-element-admin/user/info',
+//     method: 'get',
+//     params: { token }
+//   })
 // }
-//
+
 // export function logout() {
-//     let ret =  {code: 20000, data: 'success'}
-//     ret
+//   return request({
+//     url: '/vue-element-admin/user/logout',
+//     method: 'post'
+//   })
 // }
+
+export function login(data) {
+  console.log(data)
+  return new Promise(function(resolve){
+      //做一些异步操作
+      resolve({code: 20000, data: {token: 'admin-token'}});
+    })
+}
+//
+export function getInfo(token) {
+  console.log(token)
+  return new Promise(function(resolve) {
+    setTimeout(function () {
+      resolve({
+        code: 20000,
+        data: {
+          roles: ["admin"],
+          introduction: "I am a super administrator",
+          avatar: "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
+          name: "Super Admin"
+        }
+      });
+    }, 1000)
+  })
+}
+
+
+export function logout() {
+  return new Promise(function(resolve){
+    //做一些异步操作
+    resolve({code: 20000, data: 'success'});
+  })
+}
