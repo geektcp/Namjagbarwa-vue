@@ -7,13 +7,14 @@ import Layout from '@/layout'
 
 import HelloWorldA from '@/views/hello-world/HelloWorldA'
 import HelloWorldB from "@/views/hello-world/HelloWorldB";
-import app1 from "@/views/app-example/app1";
-import app2 from "@/views/app-example/app2";
-import app3 from "@/views/app-example/app3";
-import app4 from "@/views/app-example/app4";
-import app5 from "@/views/app-example/app5";
-import app6 from "@/views/app-example/app6";
-import app7 from "@/views/app-example/app7";
+import app1 from "@/views/app-example/data";
+import app2 from "@/views/app-example/v-bind";
+import app3 from "@/views/app-example/v-if";
+import app4 from "@/views/app-example/v-for1";
+import app5 from "@/views/app-example/v-on";
+import app6 from "@/views/app-example/v-model";
+import app7 from "@/views/app-example/v-for2";
+import app8 from "@/views/app-example/v-text";
 
 export const constantRoutes = [
   {
@@ -86,52 +87,59 @@ export const constantRoutes = [
     },
     children: [
       {
-        path: 'app1',
+        path: 'data',
         component: app1,
         meta: {
-          title: 'app1',
+          title: 'data',
         }
       },
       {
-        path: '/app2',
+        path: '/v-bind',
         component: app2,
         meta: {
-          title: 'app2',
+          title: 'v-bind',
         }
       },
       {
-        path: '/app3',
+        path: '/v-if',
         component: app3,
         meta: {
-          title: 'app3',
+          title: 'v-if',
         }
       },
       {
-        path: '/app4',
+        path: '/v-for1',
         component: app4,
         meta: {
-          title: 'app4',
+          title: 'v-for1',
         }
       },
       {
-        path: '/app5',
+        path: '/v-on',
         component: app5,
         meta: {
-          title: 'app5',
+          title: 'v-on',
         }
       },
       {
-        path: '/app6',
+        path: '/v-model',
         component: app6,
         meta: {
-          title: 'app6',
+          title: 'v-model',
         }
       },
       {
-        path: '/app7',
+        path: '/v-for2',
         component: app7,
         meta: {
-          title: 'app7',
+          title: 'v-for2',
+        }
+      },
+      {
+        path: '/v-text',
+        component: app8,
+        meta: {
+          title: 'v-text',
         }
       },
     ]

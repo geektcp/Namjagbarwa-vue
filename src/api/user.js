@@ -1,4 +1,4 @@
-// import request from '@/utils/request'
+import request from '@/utils/request'
 
 // export function login(data) {
 //   return request({
@@ -26,11 +26,18 @@
 export function login(data) {
   console.log(data)
   return new Promise(function(resolve){
-      //做一些异步操作
       resolve({code: 20000, data: {token: 'admin-token'}});
     })
 }
-//
+
+// export function login(data) {
+//   return request({
+//     url: '/api/login.json',
+//     method: 'get',
+//     data
+//   })
+// }
+
 export function getInfo(token) {
   console.log(token)
   return new Promise(function(resolve) {
@@ -51,7 +58,6 @@ export function getInfo(token) {
 
 export function logout() {
   return new Promise(function(resolve){
-    //做一些异步操作
     resolve({code: 20000, data: 'success'});
   })
 }
