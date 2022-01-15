@@ -2,14 +2,12 @@ import request from '@/utils/request'
 
 /////////////////////////////////////////////////////////////////////
 export function loginPromise(data) {
-  console.log(data)
   return new Promise(function(resolve){
       resolve({code: 20000, data: {token: 'admin-token'}});
     })
 }
 
 export function getInfoPromise(token) {
-  console.log(token)
   return new Promise(function(resolve) {
     setTimeout(function () {
       resolve({
