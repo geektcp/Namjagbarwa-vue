@@ -58,7 +58,6 @@ import request from '@/utils/request'
 
 //////////////////////////////////////////////////////
 export function login(data) {
-  console.log(BASE_URL)
   return request({
     url: '/api/login.json',
     method: 'get',
