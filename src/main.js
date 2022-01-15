@@ -30,7 +30,6 @@ Vue.use(Element, {
 
 
 Vue.config.productionTip = false
-Vue.config.$isload = false
 new Vue({
   el: '#app',
   router,
