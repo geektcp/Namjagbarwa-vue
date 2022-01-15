@@ -58,8 +58,9 @@ import request from '@/utils/request'
 
 //////////////////////////////////////////////////////
 export function login(data) {
+  console.log(BASE_URL)
   return request({
-    url: '/login.json',
+    url: '/api/login.json',
     method: 'get',
     data
   })
@@ -67,14 +68,14 @@ export function login(data) {
 
 export function getInfo() {
   return request({
-    url: '/user/info.json',
+    url: '/api/user/info.json',
     method: 'get',
   })
 }
 
 export function logout() {
   return request({
-    url: '/logout.json',
+    url: '/api/logout.json',
     method: 'get',
   })
 }
